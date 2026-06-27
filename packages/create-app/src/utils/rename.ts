@@ -58,6 +58,7 @@ export async function renameProject(
 ): Promise<void> {
   const replacements: [RegExp, string][] = [
     [/\bproject-template\b/g, projectName],
+    [/\bproject template\b/g, projectName],
     [/\bProject Template\b/g, projectName],
     [/@template/g, `@${projectName}`],
   ];

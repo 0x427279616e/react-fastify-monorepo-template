@@ -2,31 +2,21 @@
 
 Monorepo managed with [pnpm workspaces](https://pnpm.io/workspaces) and orchestrated by [Turborepo](https://turbo.build/repo).
 
-## Quick start
-
-Create a new project from this template:
-
-```bash
-npx create-bryan-monorepo-template
-```
-
-Or with a project name directly:
-
-```bash
-npx create-bryan-monorepo-template my-project
 ```
 
 ## Architecture
 
 ```
+
 ├── apps/
-│   ├── api/                  # Fastify backend (TypeScript)
-│   └── web/                  # React + Vite frontend (TypeScript)
+│ ├── api/ # Fastify backend (TypeScript)
+│ └── web/ # React + Vite frontend (TypeScript)
 ├── packages/
-│   └── shared/               # Shared types, schemas, and utilities
-├── turbo.json                # Turborepo pipeline config
-└── pnpm-workspace.yaml       # Workspace definition
-```
+│ └── shared/ # Shared types, schemas, and utilities
+├── turbo.json # Turborepo pipeline config
+└── pnpm-workspace.yaml # Workspace definition
+
+````
 
 **`apps/`** — deployable applications. Each is its own package with its own dependencies and build.
 
@@ -49,17 +39,17 @@ pnpm build
 # 3. Configure environment
 #    Copy apps/api/.env to apps/api/.env.local
 #    Fill in your MySQL credentials and other variables
-```
+````
 
 ## Turborepo pipeline
 
 [`turbo.json`](./turbo.json) defines how tasks flow between packages:
 
-| Task | `dependsOn` | `outputs` | Persistent |
-|---|---|---|---|
-| `build` | `^build` | `dist/**` | No |
-| `dev` | `^build` | — | Yes |
-| `start` | `^build` | — | Yes |
+| Task    | `dependsOn` | `outputs` | Persistent |
+| ------- | ----------- | --------- | ---------- |
+| `build` | `^build`    | `dist/**` | No         |
+| `dev`   | `^build`    | —         | Yes        |
+| `start` | `^build`    | —         | Yes        |
 
 - **`^build`** means "wait for all workspace dependency builds to finish first" — shared builds before api.
 - `dev` and `start` are **persistent** (they run indefinitely), so caching is disabled for them.
@@ -69,12 +59,12 @@ pnpm build
 
 ### Root (run via pnpm or turbo)
 
-| Command | What it does |
-|---|---|
-| `pnpm dev` | Start everything in dev mode (apps/* only, serialized) |
-| `pnpm build` | Build all packages and apps in dependency order |
-| `pnpm start` | Start compiled production servers |
-| `pnpm test` | Run API tests only (configured in turbo for expansion) |
+| Command      | What it does                                            |
+| ------------ | ------------------------------------------------------- |
+| `pnpm dev`   | Start everything in dev mode (apps/\* only, serialized) |
+| `pnpm build` | Build all packages and apps in dependency order         |
+| `pnpm start` | Start compiled production servers                       |
+| `pnpm test`  | Run API tests only (configured in turbo for expansion)  |
 
 ### Running per-package commands from root
 
@@ -111,16 +101,16 @@ turbo test
 
 #### Common examples
 
-| Goal | Command |
-|---|---|
-| Dev both api and web in parallel | `pnpm dev` |
-| Dev only api | `pnpm --filter api dev` |
-| Dev only web | `pnpm --filter web dev` |
-| Build everything | `pnpm build` |
-| Build only web | `turbo build --filter=@template/web` |
+| Goal                                     | Command                              |
+| ---------------------------------------- | ------------------------------------ |
+| Dev both api and web in parallel         | `pnpm dev`                           |
+| Dev only api                             | `pnpm --filter api dev`              |
+| Dev only web                             | `pnpm --filter web dev`              |
+| Build everything                         | `pnpm build`                         |
+| Build only web                           | `turbo build --filter=@template/web` |
 | Build only api (shared auto-built first) | `turbo build --filter=@template/api` |
-| Run api tests | `pnpm --filter api test` |
-| Run api migrations | `pnpm --filter api db:migrate` |
+| Run api tests                            | `pnpm --filter api test`             |
+| Run api migrations                       | `pnpm --filter api db:migrate`       |
 
 ## Cross-package dependencies
 
