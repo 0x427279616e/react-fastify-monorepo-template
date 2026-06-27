@@ -2,6 +2,20 @@
 
 Monorepo managed with [pnpm workspaces](https://pnpm.io/workspaces) and orchestrated by [Turborepo](https://turbo.build/repo).
 
+## Quick start
+
+Create a new project from this template:
+
+```bash
+npx create-bryan-monorepo-template
+```
+
+Or with a project name directly:
+
+```bash
+npx create-bryan-monorepo-template my-project
+```
+
 ## Architecture
 
 ```
