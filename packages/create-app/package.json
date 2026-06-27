@@ -1,0 +1,27 @@
+{
+  "name": "create-template-app",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Scaffold a new project from the react-fastify monorepo template",
+  "bin": {
+    "create-app": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.0",
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^6.0.3"
+  }
+}

@@ -12,7 +12,8 @@
       "dev": "turbo dev",
       "build": "turbo build",
       "start": "turbo start",
-      "test": "pnpm --filter api test"
+      "test": "pnpm --filter api test",
+      "create": "node packages/create-app/dist/index.js"
    },
    "dependencies": {
       "pnpm": "^11.5.0"
