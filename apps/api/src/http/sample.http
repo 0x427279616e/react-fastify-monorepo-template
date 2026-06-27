@@ -1,0 +1,39 @@
+
+
+### GET ALL
+GET http://localhost:4000/api/sample
+
+### GET ALL with search params
+GET http://localhost:4000/api/sample?code=ABC
+
+### GET BY ID
+GET http://localhost:4000/api/sample/1
+
+
+#### INSERT NEW ROW
+POST http://localhost:4000/api/sample
+Content-Type: application/json
+
+  {
+    "code": "SMP",
+    "area": "Sample Area",
+    "series": "0001"
+  }
+
+#### UPDATE ROW BY ID
+PUT http://localhost:4000/api/sample/1
+Content-Type: application/json
+
+  {
+    "code": "SMP",
+    "area": "Updated Area",
+    "series": "0002"
+  }
+
+#### UPDATE STATUS to enabled | disabled
+PATCH http://localhost:4000/api/sample/1
+Content-Type: application/json
+
+  {
+    "status": "enabled"
+  }

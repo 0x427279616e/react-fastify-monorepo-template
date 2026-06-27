@@ -1,0 +1,24 @@
+{
+   "name": "project-template",
+   "version": "1.0.0",
+   "private": true,
+   "description": "project template — monorepo managed by pnpm workspaces",
+   "author": {
+      "email": "bryansurio14@gmail.com",
+      "name": "Bryan Surio"
+   },
+   "license": "ISC",
+   "scripts": {
+      "dev": "turbo dev",
+      "build": "turbo build",
+      "start": "turbo start",
+      "test": "pnpm --filter api test"
+   },
+   "dependencies": {
+      "pnpm": "^11.5.0"
+   },
+   "packageManager": "pnpm@11.5.0",
+   "devDependencies": {
+      "turbo": "^2.10.0"
+   }
+}
