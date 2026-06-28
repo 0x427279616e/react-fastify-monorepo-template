@@ -89,9 +89,12 @@ const themeConfigSlice = createSlice({
 
          if (state.isDarkMode) {
             document.querySelector('body')?.classList.add('dark');
+            document.documentElement.classList.add('dark');
          } else {
             document.querySelector('body')?.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
          }
+         document.documentElement.setAttribute('data-theme', state.isDarkMode ? 'dark' : 'light');
       },
       toggleMenu(state, { payload }) {
          payload = payload || state.menu; // vertical, collapsible-vertical, horizontal
