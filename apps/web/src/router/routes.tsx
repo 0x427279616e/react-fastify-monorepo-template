@@ -1,24 +1,24 @@
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 
-const Dashboard = lazy(() => import('../pages/Dashboard/Home'));
-const Login = lazy(() => import('../pages/Login'));
 const Error404 = lazy(() => import('../pages/Error404'));
+const PersonalInfoList = lazy(() => import('../pages/PersonalInfo'));
+const PersonalInfoForm = lazy(() => import('../pages/PersonalInfo/form'));
 
 const routes = [
    {
       path: '/',
-      element: <Navigate to="/dashboard" />,
+      element: <Navigate to="/personal-info" />,
       layout: 'default',
    },
    {
-      path: '/login',
-      element: <Login />,
-      layout: 'blank',
+      path: '/personal-info',
+      element: <PersonalInfoList />,
+      layout: 'default',
    },
    {
-      path: '/dashboard',
-      element: <Dashboard />,
+      path: '/personal-info/form',
+      element: <PersonalInfoForm />,
       layout: 'default',
    },
    {

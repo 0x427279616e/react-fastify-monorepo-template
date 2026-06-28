@@ -1,0 +1,39 @@
+
+
+### GET ALL
+GET http://localhost:4000/api/personal-info
+
+
+### GET BY ID
+GET http://localhost:4000/api/personal-info/1
+
+
+#### INSERT NEW DATA
+POST http://localhost:4000/api/personal-info
+Content-Type: application/json
+
+  {
+    "first_name": "test",
+    "last_name": "test2",
+    "email": "test@gmail.com",
+    "phone": "003135022",
+    "address": "Scout Borromeo",
+    "city": "Quezon City"
+  }
+
+#### UPDATE ROW BY ID
+PUT http://localhost:4000/api/personal-info/2
+Content-Type: application/json
+
+{
+    "first_name": "sample",
+    "last_name": "sample2",
+    "email": "sample@gmail.com",
+    "phone": "0022123123202",
+    "address": "Quezon qqqcity",
+    "city": "Quezon city"
+  }
+
+#### DELETE BY ID
+DELETE http://localhost:4000/api/personal-info/1
+

@@ -25,7 +25,7 @@ const AuthChecker: React.FC<AuthCheckerProps> = ({ children }) => {
     }
 
     if (!isAuthenticated) {
-        return <Navigate to="/login" replace />;
+        return <Navigate to="/" replace />;
     }
 
     return <>{children || <Outlet />}</>;

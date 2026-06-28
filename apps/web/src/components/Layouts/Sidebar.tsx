@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Sidebar as DarwinSidebar } from '@pikoloo/darwin-ui';
-import { LayoutDashboard, LogIn } from 'lucide-react';
+import { User, UserPlus } from 'lucide-react';
 import { useAuth } from '../../utils/AuthProvider';
 
 const Sidebar = () => {
@@ -9,18 +9,18 @@ const Sidebar = () => {
    const { logout } = useAuth();
 
    const items = [
-      { label: 'Dashboard', onClick: () => navigate('/dashboard'), icon: LayoutDashboard },
-      { label: 'Login', onClick: () => navigate('/login'), icon: LogIn },
+      { label: 'Personal Info', onClick: () => navigate('/personal-info'), icon: User },
+      { label: 'Add Personal Info', onClick: () => navigate('/personal-info/form'), icon: UserPlus },
    ];
 
-   const activeItem = location.pathname === '/dashboard' ? 'Dashboard'
-      : location.pathname === '/login' ? 'Login' : '';
+   const activeItem = location.pathname === '/personal-info' ? 'Personal Info'
+      : location.pathname === '/personal-info/form' ? 'Add Personal Info' : '';
 
    return (
       <DarwinSidebar
          items={items}
          activeItem={activeItem}
-         onLogout={() => { logout(); navigate('/login'); }}
+         onLogout={() => { logout(); navigate('/'); }}
          collapsible
          glass
       />

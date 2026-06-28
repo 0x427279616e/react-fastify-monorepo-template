@@ -1,0 +1,41 @@
+
+
+### GET ALL
+GET http://localhost:4000/api/personal-info
+
+### GET ALL with search params
+GET http://localhost:4000/api/personal-info?code=ABC
+
+### GET BY ID
+GET http://localhost:4000/api/personal-info/1
+
+
+#### INSERT NEW ROW
+POST http://localhost:4000/api/personal-info
+Content-Type: application/json
+
+  {
+    "first_name": "SMP",
+    "last_name": "personal-info Area",
+    "email": "0001",
+    "phone": "0002",
+    "address": "0003",
+    "city": "0004"
+  }
+
+#### UPDATE ROW BY ID
+PUT http://localhost:4000/api/personal-info/2
+Content-Type: application/json
+
+{
+    "first_name": "sample",
+    "last_name": "sample2",
+    "email": "sample@gmail.com",
+    "phone": "0022123123202",
+    "address": "Quezon qqqcity",
+    "city": "Quezon city"
+  }
+
+#### UPDATE STATUS to enabled | disabled
+DELETE http://localhost:4000/api/personal-info/1
+

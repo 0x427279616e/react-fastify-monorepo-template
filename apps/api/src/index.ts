@@ -62,7 +62,7 @@ app.decorate('authenticate', async function (request, reply) {
 });
 
 // add routes by using its folder name
-const routes = ['sample'];
+const routes = ['personal-info'];
 
 // register routes
 routes.forEach((routeName) => {
@@ -84,9 +84,7 @@ const start = async () => {
          port: Number(SERVER_PORT),
          host: SERVER_HOST as string,
       });
-      app.log.info(
-         `server listening on ${SERVER_HOST}:${SERVER_PORT}`,
-      );
+      app.log.info(`server listening on ${SERVER_HOST}:${SERVER_PORT}`);
    } catch (err) {
       app.log.error(err);
       process.exit(1);
