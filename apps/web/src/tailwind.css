@@ -231,7 +231,7 @@
    }
 
    label {
-      @apply mb-1.5 block font-semibold;
+      @apply mb-1.5 block font-semibold text-gray-500;
    }
 
    /* checkbox & radio */
