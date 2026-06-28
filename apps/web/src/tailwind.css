@@ -135,64 +135,6 @@
       @apply relative rounded-md bg-white p-5 shadow dark:bg-black;
    }
 
-   .navbar-sticky header,
-   .navbar-floating header {
-      @apply sticky top-0 z-20;
-   }
-   .navbar-floating header {
-      @apply bg-[#fafafa]/90 px-6 pt-4 dark:bg-[#060818]/90;
-   }
-   .navbar-floating header > div > div:first-child {
-      @apply rounded-md;
-   }
-
-   /* Sidebar */
-   .sidebar .nav-item > button,
-   .sidebar .nav-item > a {
-      @apply mb-1 flex w-full items-center gap-3 overflow-hidden whitespace-nowrap rounded-md p-2.5 text-[#fafafa] hover:bg-[#000]/[0.08] hover:text-black dark:hover:bg-[#5b5b5b] dark:hover:text-white-dark;
-   }
-   .sidebar .nav-item > button.active,
-   .sidebar .nav-item > a.active {
-      @apply bg-[#000]/[0.08] text-black dark:bg-[#C3912F] dark:text-white-dark;
-   }
-
-   .main-container .main-content {
-      @apply transition-all duration-300 lg:ltr:ml-[260px] lg:rtl:mr-[260px];
-   }
-
-   /* Horizontal layouts */
-   .horizontal .horizontal-menu {
-      @apply hidden shadow-md lg:flex;
-   }
-   .horizontal .main-container .main-content {
-      @apply ltr:ml-0 rtl:mr-0;
-   }
-   .horizontal .sidebar {
-      @apply ltr:-left-[260px] rtl:-right-[260px];
-   }
-   .horizontal.toggle-sidebar .sidebar {
-      @apply ltr:left-0 rtl:right-0 lg:ltr:-left-[260px] lg:rtl:-right-[260px];
-   }
-
-   /* Vertical layouts */
-   .vertical .sidebar {
-      @apply ltr:-left-[260px] rtl:-right-[260px] lg:ltr:left-0 lg:rtl:right-0;
-   }
-   .vertical.toggle-sidebar .sidebar {
-      @apply ltr:left-0 rtl:right-0 lg:ltr:-left-[260px] lg:rtl:-right-[260px];
-   }
-
-   /* Collapsible vertical layouts */
-   .collapsible-vertical .sidebar {
-      @apply hover:w-[260px] ltr:-left-[260px] rtl:-right-[260px] lg:w-[70px] lg:ltr:left-0 lg:rtl:right-0;
-   }
-   .collapsible-vertical.toggle-sidebar .sidebar {
-      @apply ltr:left-0 rtl:right-0 lg:w-[260px];
-   }
-   .collapsible-vertical .main-content {
-      @apply lg:w-[calc(100%-70px)] lg:ltr:ml-[70px] lg:rtl:mr-[70px];
-   }
-
    /* Buttons */
    .btn {
       @apply relative flex items-center justify-center rounded-md px-5 py-2 text-sm font-medium outline-none transition duration-300;

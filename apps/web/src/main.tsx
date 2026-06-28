@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import 'react-perfect-scrollbar/dist/css/styles.css';
 import './tailwind.css';
 import './i18n';
 import {
